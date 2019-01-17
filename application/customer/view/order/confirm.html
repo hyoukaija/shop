@@ -1,0 +1,154 @@
+{extend name="public/base"}
+
+{block name="mycss"}
+<style type="text/css">
+    .warp {
+        padding-top: 1.5rem;
+    }
+</style>
+{/block}
+
+{block name="content"}
+    <!--header star-->
+    <header class="mui-bar mui-bar-nav" id="header">
+        <a class="btn" href="javascript:history.go(-1)">
+            <i class="iconfont icon-fanhui"></i>
+        </a>
+        <div class="top-sch-box top-sch-boxtwo flex-col">
+                      确认订单
+        </div>
+    </header>
+    <!--header end-->
+    
+    <div class="warp warptwo clearfloat">
+        <div class="confirm clearfloat">
+            <div class="add clearfloat box-s">
+                <a href="choice-address.html">
+                    <div class="left clearfloat fl">
+                        <i class="iconfont icon-dizhi1"></i>
+                    </div>
+                    <div class="middle clearfloat fl">
+                        <p class="tit">
+                            收货人：{$address->consignee}{$address->mobile}
+                        </p>
+                        <p class="fu-tit over2">
+                            收货地址：{$address->address}
+                        </p>
+                    </div>
+                    <div class="left clearfloat fr">
+                        <i class="iconfont icon-jiantou1"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="lie clearfloat">
+                <a href="detail.html">
+                    <div class="tu clearfloat fl">
+                        <img src="upload/19.jpg"/>
+                    </div>
+                </a>
+                <div class="right clearfloat fl">
+                    <a href="detail.html">
+                        <p class="tit over">{:$item->title}</p>
+                        <p class="fu-tit">颜色：金色  内存：1287G</p>
+                    </a>
+                    <div class="xia clearfloat">
+                        <a href="detail.html">
+                            <p class="jifen fl over">{:$item->sell_price}</p>
+                        </a>
+                        <span class="fr db">{:$item->number}</span>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="gmshu clearfloat box-s fl">
+                <div class="gcontent clearfloat">
+                    <p class="fl">购买数量</p>
+                    <div class="you clearfloat fr">
+                        <ul>
+                            <li><img src="img/jian.jpg"/></li>
+                            <li>1</li>
+                            <li><img src="img/jia.jpg"/></li>
+                        </ul>
+                    </div>
+                </div>                  
+            </div> -->
+            <div class="gmshu gmshutwo clearfloat box-s fl">
+                <div class="gcontent clearfloat">
+                    <p class="fl">配送方式</p>
+                    <div class="you clearfloat fr">
+                        <span>快递 免邮</span>
+                        <i class="iconfont icon-jiantou1"></i>
+                    </div>
+                </div>                  
+            </div>
+            <!-- <div class="gmshu gmshutwo clearfloat box-s fl">
+                <div class="gcontent clearfloat">
+                    <p class="fl">发票信息</p>
+                    <div class="you clearfloat fr">
+                        <div class="xuan clearfloat">
+                            <div class="radiotwo" > 
+                                <label>
+                                    <input type="radio" name="fapiao" value="" />
+                                    <div class="option"></div>
+                                    <span class="opt-text">需要发票</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="xuan clearfloat">
+                            <div class="radiotwo" > 
+                                <label>
+                                    <input type="radio" name="fapiao" value="" />
+                                    <div class="option"></div>
+                                    <span class="opt-text">不需要发票</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>                  
+            </div> -->
+            <div class="gmshu gmshuthree clearfloat box-s fl">
+                <div class="gcontent clearfloat">
+                    <p class="fl">买家留言</p>
+                    <div class="you clearfloat fl">
+                        <input type="text" name="" id="" value="" class="text" placeholder="选填 对本次交易需求给商家留言" />
+                    </div>
+                </div>                  
+            </div>
+            <div class="gmshu clearfloat box-s fl">
+                <p class="fr">共1件商品   合计<samp>{:$item->number * $item->sell_price}</samp></p>              
+            </div>
+            <!-- <div class="integral clearfloat fl box-s">
+                <div class="zuo clearfloat fl">
+                    积分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可用积分2446
+                </div>
+                <div class="you clearfloat fr">
+                    <div class="xuan clearfloat">
+                        <div class="radiothree" > 
+                            <label>
+                                <input type="checkbox" name="fapiao" value="" />
+                                <div class="option"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>      
+    
+    <!--settlement star-->
+    <div class="settlement clearfloat">
+        <div class="zuo clearfloat fl box-s">
+            共<span>1</span>件  总金额：<span>￥2998</span>
+        </div>
+        <a href="{:url('customer/order/submit_order')}" class="fl db">
+            提交订单
+        </a>
+    </div>
+    <!--settlement end-->
+        
+{/block}
+
+{block name="myjs"}
+<script type="text/javascript">
+    
+</script>
+{/block}

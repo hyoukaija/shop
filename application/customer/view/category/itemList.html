@@ -1,0 +1,72 @@
+{extend name="public/base"}
+{block name="mycss"}
+<style type="text/css">
+    .warp {
+        padding-top: 1.5rem;
+    }
+</style>
+{/block}
+{block name="content"}
+    <header class="mui-bar mui-bar-nav" id="header">
+        <a class="btn" href="javascript:history.go(-1)">
+            <i class="iconfont icon-fanhui"></i>
+        </a>
+        <div class="top-sch-box flex-col">
+            <div class="centerflex">
+                <i class="fdj iconfont icon-sousuo"></i>
+                <input type="text" name="" id="" value="" class="sch-txt" placeholder="输入您要搜索的商品" />
+            </div>
+        </div>
+        <a class="btn" href="#">
+            <i class="iconfont icon-gouwuche"></i>
+            <span>{$calcType}</span>
+        </a>
+    </header>
+    <!--header end-->
+    
+    <div class="warp clearfloat">
+        <div class="lists clearfloat">
+            <div class="top clearfloat">
+                <ul>
+                    <li>默认</li>
+                    <li>价格<i class="iconfont icon-xiala"></i></li>
+                    <li>销量<i class="iconfont icon-xiala"></i></li>
+                </ul>
+            </div>
+            <div class="bottom clearfloat">
+                {foreach $items as $key=>$vo}
+                <div class="lie clearfloat">
+                    <a href="{:url('/customer/item/detail/'.$vo->id)}">
+                        <div class="tu clearfloat fl">
+                            <img src="__CUSTOMER__items/{$vo->title}/thumb_{:$vo->thumb_image}"/>
+                        </div>
+                    </a>
+                    <div class="right clearfloat fl">
+                        <a href="{:url('/customer/item/detail/'.$vo->id)}">
+                            <p class="tit">{:$vo->title}</p>
+                        </a>
+                        <div class="xia clearfloat">
+                            <a href="{:url('/customer/item/detail/'.$vo->id)}">
+                                <p class="jifen fl over">{:$vo->details}</p>
+                            </a>
+                            <span class="fr db"><img src="__CUSTOMER__img/jia.png"/></span>
+                        </div>
+                    </div>
+                </div>
+                {/foreach}
+            </div>
+        </div>
+    </div>
+        
+{/block}
+
+{block name="myjs"}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".active").removeClass("active");
+        $(".categoryIndex").addClass("active");
+    });
+
+
+</script>
+{/block}  

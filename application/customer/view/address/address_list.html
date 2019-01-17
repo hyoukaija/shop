@@ -1,0 +1,65 @@
+{extend name="public/base"}
+
+{block name="mycss"}
+<style type="text/css">
+
+</style>
+{/block}
+
+{block name="content"}
+<header class="mui-bar mui-bar-nav report-header box-s" id="header">
+    <a href="javascript:history.go(-1)"><i class="iconfont icon-fanhui fl"></i></a>
+    <p>管理收货地址</p>
+</header>
+<div id="main" class="mui-clearfix contaniner">
+    {foreach $address as $key => $vo}
+        <div class="addlist clearfloat">
+            <div class="top clearfloat box-s">
+                <ul>
+                    <li>
+                        <span class="fl">{:$vo->consignee}</span>
+                        <span class="fr">{:$vo->mobile}</span>
+                    </li>
+                    <li>
+                        {$vo->zipcode}{$vo->country.$vo->province.$vo->city.$vo->district.$vo->address}
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom clearfloat box-s">
+                <section class="shopcar clearfloat">
+                    <div class="radio fl"> 
+                        <label>
+                            <input type="radio" name="sex" value="">
+                            <div class="option"></div>
+                            <span class="mradd smradd fl">设为默认</span>
+                        </label>
+                    </div>
+                    
+                    <div class="right fr clearfloat">
+                        <a href="{:url('/customer/address/delete/'.$vo->id)}" class="fr">
+                            <i class="iconfont icon-lajixiang"></i>
+                            删除
+                        </a>
+                        <a href="{:url('/customer/address/edit/'.$vo->id)}" class="fr">
+                            <i class="iconfont icon-shouji"></i>
+                            编辑
+                        </a>                            
+                    </div>
+                </section>
+            </div>
+        </div>
+    {/foreach} 
+    <a href="{:url('/customer/address/create')}" class="address-add fl">
+        添加新地址
+    </a> 
+</div>
+
+    
+
+{/block}
+
+{block name="myjs"}
+<script type="text/javascript">
+    
+</script>
+{/block}

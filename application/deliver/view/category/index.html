@@ -1,0 +1,51 @@
+{extend name="public/base"}
+
+{block name="mycss"}
+<style type="text/css">
+    .warp {
+        padding-top: 1.5rem;
+    }
+</style>
+{/block}
+
+{block name="content"}
+<div class="warp clearfloat">
+    <header class="mui-bar mui-bar-nav" id="header">
+        <a class="btn" href="javascript:history.go(-1)">
+            <i class="iconfont icon-fanhui"></i>
+        </a>
+        <div class="top-sch-box flex-col">
+            <div class="centerflex">
+                <i class="fdj iconfont icon-sousuo"></i>
+                <input type="text" name="" id="" value="" class="sch-txt" placeholder="输入您要搜索的商品" />
+            </div>
+        </div>
+        <a class="btn" href="#">
+            <i class="iconfont icon-erweima"></i>
+        </a>
+    </header>
+    <!--cation star-->
+    <div class="cations clearfloat">
+        {foreach $categories as $key=>$vo}
+        <div class="list clearfloat fl">
+            <a href="{:url('/customer/category/itemList/'.$vo->id)}">
+                <p class="tit over box-s">{$vo->name}</p>
+                <div class="tu">
+                    <img src="__CUSTOMER__category/{:$vo->image}"/>
+                </div>
+            </a>
+        </div>
+        {/foreach}
+    </div>
+    <!--cation end-->
+</div>  
+{/block}
+
+{block name="myjs"}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".active").removeClass("active");
+        $(".categoryIndex").addClass("active");
+    })
+</script>
+{/block}  

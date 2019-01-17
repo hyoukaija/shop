@@ -1,0 +1,92 @@
+{extend name="public/base"}
+
+{block name="mycss"}
+<style type="text/css">
+    
+</style>
+{/block}
+
+{block name="content"}
+    <header class="mui-bar mui-bar-nav report-header box-s" id="header">
+        <a href="javascript:history.go(-1)"><i class="iconfont icon-fanhui fl"></i></a>
+        <p>提交订单</p>
+    </header>
+    <div id="main" class="mui-clearfix contaniner sorder">          
+        <div class="warning clearfloat box-s">
+            提示：请在24小时内完成在线支付，逾期将视为订单无效
+        </div>
+        <div class="odernum clearfloat">
+            <ul>
+                <li>您的订单号：1298451221</li>
+                <li>应付金额：<span>￥598.00</span></li>
+            </ul>
+        </div>
+        <div class="pay-method clearfloat">
+            <ul>
+                <li>请选择支付方式</li>
+            </ul>
+        </div>
+        <div class="addlist clearfloat">
+            <div class="bottom clearfloat box-s">
+                <section class="shopcar clearfloat">
+                    <div class="radio radiosss fr"> 
+                        <label>
+                            <input type="radio" name="sex" value="">
+                            <div class="option"></div>
+                        </label>
+                    </div>
+                    <div class="sorder-list clearfloat fl">
+                        <i class="iconfont icon-weixinzhifu fl"></i>
+                        <div class="zuo fl">
+                            <p class="tit">微信支付</p>
+                            <p class="fu-tit">亿万用户的选择，更快更安全</p>
+                        </div>                          
+                    </div>
+                </section>
+            </div>
+            <div class="bottom clearfloat box-s">
+                <section class="shopcar clearfloat">
+                    <div class="radio radiosss fr"> 
+                        <label>
+                            <input type="radio" name="sex" value="">
+                            <div class="option"></div>
+                        </label>
+                    </div>
+                    <div class="sorder-list clearfloat fl">
+                        <i class="iconfont icon-zhifubao fl"></i>
+                        <div class="zuo fl">
+                            <p class="tit">支付宝</p>
+                            <p class="fu-tit">客户端支持最便捷！可银行卡支付！</p>
+                        </div>                          
+                    </div>
+                </section>
+            </div>
+            <div class="bottom clearfloat box-s">
+                <section class="shopcar clearfloat">
+                    <div class="radio fr"> 
+                        <label>
+                            <input type="radio" name="sex" value="">
+                            <div class="option"></div>
+                        </label>
+                    </div>
+                    <div class="sorder-list clearfloat fl">
+                        <i class="iconfont icon-yinxingqia fl"></i>
+                        <div class="zuo fl">
+                            <p class="tit">银行卡</p>
+                            <p class="fu-tit">需要先开通网银</p>
+                        </div>                          
+                    </div>
+                </section>
+            </div>
+        </div>
+        <a href="#" class="address-add fl">
+            确认支付
+        </a>
+    </div>
+{/block}
+
+{block name="myjs"}
+<script type="text/javascript">
+    
+</script>
+{/block}

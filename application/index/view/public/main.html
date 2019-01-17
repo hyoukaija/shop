@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="gungun-page">
+    <meta name="author" content="gungun">
+    <meta name="keywords" content="">
+    <meta name="robots" content="all">
+    <title>滚滚的模板</title>
+    <link rel="stylesheet" href="__INDEX__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__INDEX__/css/main.css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="__INDEX__/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__INDEX__/css/owl.carousel.css">
+    <link rel="stylesheet" href="__INDEX__/css/owl.transitions.css">
+    <link rel="stylesheet" href="__INDEX__/css/orange.css">
+</head>
+
+<body>
+<nav class="top-bar">
+    <div class="container">
+        <div class="col-xs-12 col-sm-6 no-margin">
+            <ul>
+                <li><a href="">首页</a></li>
+            </ul>
+        </div><!-- /.col -->
+
+        <div class="col-xs-12 col-sm-6 no-margin">
+            <ul class="right">
+                <li><a href="">注册</a></li>
+                <li><a href="">登录</a></li>
+            </ul>
+        </div><!-- /.col -->
+    </div><!-- /.container -->
+</nav>
+<header>
+    <div class="container">
+        <div class="col-md-3">
+        </div>
+        <div class="col-xs-12  col-md-6  top-search-holder no-margin">
+            <div class="search-area">
+                <form>
+                    <div class="control-group">
+                        <input class="search-field" placeholder="搜索"/>
+                        <ul class="categories-filter animate-dropdown">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="category-grid.html">all
+                                    categories</a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                               href="category-grid.html">laptops</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a class="search-button" href="#"></a>
+                    </div>
+                </form>
+            </div><!-- /.search-area -->
+        </div><!-- /.top-search-holder -->
+    </div><!-- /.container -->
+    <nav id="top-megamenu-nav" class="megamenu-vertical animate-dropdown">
+        <div class="container">
+            <div class="yamm navbar">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#mc-horizontal-menu-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div><!-- /.navbar-header -->
+                <div class="collapse navbar-collapse" id="mc-horizontal-menu-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-hover="dropdown"
+                               data-toggle="dropdown">Computers</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Computer Cases &amp; Accessories</a></li>
+                                <li><a href="#">CPUs, Processors</a></li>
+                                <li><a href="#">Fans, Heatsinks &amp; Cooling</a></li>
+                                <li><a href="#">Graphics, Video Cards</a></li>
+                                <li><a href="#">Interface, Add-On Cards</a></li>
+                                <li><a href="#">Laptop Replacement Parts</a></li>
+                                <li><a href="#">Memory (RAM)</a></li>
+                                <li><a href="#">Motherboards</a></li>
+                                <li><a href="#">Motherboard &amp; CPU Combos</a></li>
+                            </ul>
+                        </li>
+                    </ul><!-- /.navbar-nav -->
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.navbar -->
+        </div><!-- /.container -->
+    </nav>
+</header>
+
+{block name="content"}{/block}
+
+<footer id="footer" class="color-bg">
+    <div class="copyright-bar">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 no-margin">
+                <div class="copyright">
+                    &copy; <a href="index.html">Media Center</a> - all rights reserved
+                </div><!-- /.copyright -->
+            </div>
+        </div><!-- /.container -->
+    </div><!-- /.copyright-bar -->
+
+</footer><!-- /#footer -->
+<!-- ============================================================= FOOTER : END ============================================================= -->
+<!-- /.wrapper -->
+<script src="__INDEX__/js/jquery.min.js"></script>
+<script src="__INDEX__/js/bootstrap.min.js"></script>
+<script src="__INDEX__/js/owl.carousel.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#owl-demo').owlCarousel({
+            items: 1,
+            autoPlay: true
+        });
+    });
+
+    $(window).bind("load", function () {
+        $('.show-theme-options').delay(2000).trigger('click');
+    });
+</script>
+
+</body>
+</html>

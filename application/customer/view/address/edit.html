@@ -1,0 +1,99 @@
+{extend name="public/base"}
+
+{block name="mycss"}
+<style type="text/css">
+    
+</style>
+{/block}
+
+{block name="content"}
+<form action="" method="post">
+    {:token()}
+    <input type="hidden" name="_method" value="put">
+    <header class="mui-bar mui-bar-nav report-header box-s" id="header">
+        <a href="javascript:history.go(-1)"><i class="iconfont icon-fanhui fl"></i></a>
+        <p>修改地址</p>
+        <input type="submit" class="fr baocun" value="保存"></input>
+    </header>
+    <div id="main" class="mui-clearfix add-address">
+        <div class="plist clearfloat data">
+            <ul>
+                <li class="clearfloat">
+                <p class="fl">收货人</p>
+                <input type="text" class="fl shuru" name="consignee" value="{$address['consignee']}" placeholder="汉字姓名" />
+                </li>
+                <li class="clearfloat">
+                    <p class="fl">联系电话</p>
+                    <input type="text" class="fl shuru" name="mobile" value="{$address['mobile']}" placeholder="手机号" />
+                    <!-- <i class="fr iconfont icon-jiahao"></i> -->
+                </li>
+                <li class="clearfloat">
+                    <a href="#">
+                        <p class="fl">省份</p>
+                        <input type="text" class="fl shuru" name="province" value="{$address['province']}" placeholder="省份" />
+                        <i class="fr iconfont icon-jiantou1"></i>
+                    </a>
+                </li>
+                <li class="clearfloat">
+                    <p class="fl">城市</p>
+                    <input type="text" class="fl shuru" name="city" value="{$address['city']}" />
+                    <!-- <i class="fr iconfont icon-jiantou1"></i> -->
+                </li>
+                <li class="clearfloat">
+                    <p class="fl">区</p>
+                    <input type="text" class="fl shuru" name="district" value="{$address['district']}" />
+                    <!-- <i class="fr iconfont icon-jiantou1"></i> -->
+                </li>
+                <li class="clearfloat">
+                    <p class="fl">详细地址</p>
+                    <input type="text" class="fl shuru" name="address" value="{$address['address']}" />
+                    <!-- <i class="fr iconfont icon-jiantou1"></i> -->
+                </li>
+                <li class="clearfloat">
+                    <p class="fl">邮编</p>
+                    <input type="text" class="fl shuru" name="zipcode" value="{$address['zipcode']}" />
+                    <!-- <i class="fr iconfont icon-jiantou1"></i> -->
+                </li>
+            </ul>
+        </div>
+        <div class="address-btn clearfloat">
+            <span class="szwmr fl">设为默认</span>
+            <a href="#" class="toggle toggle--on fr"></a>
+            <input type="hidden" name="is_default" value="0">
+        </div>
+    </div>
+</form>
+{/block}
+
+{block name="myjs"}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".active").removeClass("active");
+        $(".userIndex").addClass("active");
+    });
+
+    //默认按钮
+    $('.toggle').click(function(e){
+    
+        var toggle = this;
+        
+        e.preventDefault();
+        
+        $(toggle).toggleClass('toggle--on').toggleClass('toggle--off').addClass('toggle--moving');
+        
+        setTimeout(function(){
+            $(toggle).removeClass('toggle--moving');
+        }, 200)
+        if( $(toggle).hasClass("toggle--off")){
+            $('input[name=is_default]').val(1);
+        } else {
+            $('input[name=is_default]').val(0);
+        }
+    });
+
+    // $('.baocun').click(function(){
+    //     $('form').submit();
+    // });
+</script>
+{/block}
+		

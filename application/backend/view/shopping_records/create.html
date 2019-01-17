@@ -1,0 +1,113 @@
+{extend name="public/base"}
+
+
+{block name="seo"}
+
+<title>{$title|default='页面标题'}</title>
+<meta name="keywords" content="{$keywords|default='页面关键字'}">
+<meta name="description" content="{$desc|default='页面描述'}">
+
+
+{/block}
+
+{block name="content"}
+<div class="page-container">
+    <form action="" method="POST" enctype="multipart/form-data" class="form form-horizontal" id="form-article-add">
+        {:token()}
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">订单编号：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder=""  name="express_number">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">快递类型：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder=""  name="express_type">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">寄件人：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <select name="buyer_id" class="select">
+                    {foreach $buyers as $key=>$vo}
+                    <option value="{:$key}">{:$vo}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">收件人：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <select name="dilivery_id" class="select">
+                    {foreach $diliveries as $key=>$vo}
+                    <option value="{:$key}">{:$vo}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">包裹重量：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" name="weight"  placeholder="" value="" class="input-text" style="width:90%">
+                g</div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">快递价格：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" name="express_fee"  placeholder="" value="" class="input-text" style="width:90%">
+                元</div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">商品总价：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" name="total_price"  placeholder="" value="" class="input-text" style="width:90%">
+                元</div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">图片上传：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                    <input type="file" name="image">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">状态：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <select class="select" name="status">
+                    <option>请选择</option>
+                    <option value="1">邮寄中</option>
+                    <option value="2">完成</option>
+                    <option value="3">退回</option>
+                    <option value="4">异常</option>
+                </select>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">状态：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <select class="select" name="taxed">
+                    <option>请选择</option>
+                    <option value="0">未被税</option>
+                    <option value="1">被税</option>
+                </select>
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                <button class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
+                <a href="{:url('/backend/shopping_records/index')}"><button  class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button></a>
+            </div>
+        </div>
+    </form>
+</div>
+{/block}
+
+{block name="myjs"}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("body").addClass("big-page");
+    })
+
+    // $(".form_datetime").datetimepicker({minView: 'month',format: 'yyyy-mm-dd',todayBtn: 1,autoclose:1,});
+</script>
+{/block}
